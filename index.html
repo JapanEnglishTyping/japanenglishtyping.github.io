@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese-English Typing Practice</title>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="top neuromorph">
+        <h1>英語タイピング練習</h1>
+    </div>
+
+    <div class="quiz neuromorph">
+        <div id="japanese" class="neuromorph">練習やトレーニングで選ぶ</div>
+        <div id="english" class="neuromorph"></div>
+        <div class="input neuromorphInset">
+            <input type="text" id="answer" class="neuromorph">
+            <button class="neuromorph" id="answer_btn">Check</button>
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="practice neuromorph">
+            <h2>トレーニング</h2>
+            <div class="selection_container">
+                <span class="neuromorphInset">
+                    <p class="selection">三文字の英単語</p>
+                    <button class="selection_btn neuromorph" onclick="select(0)">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">四文字英単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">五文字英単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">六文字の英単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">動詞英単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">名詞・代名詞英単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+            </div>
+        </div>
+        <div class="challenge neuromorph">
+            <h2>チャレンジ</h2>
+            <div class="selection_container">
+                <span class="neuromorphInset">
+                    <p class="selection">三文字から四文字の単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">五から六文字の単語</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">幼稚園の語彙</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">初級語彙</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">高校語彙</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+                <span class="neuromorphInset">
+                    <p class="selection">大学の語彙</p>
+                    <button class="selection_btn neuromorph">選択する</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap');
+
+    .contents {
+        display: flex;
+        height: 50vh;
+        justify-content: space-between;
+    }
+
+    .practice, .challenge {
+        width: 50vw;
+        overflow-y: scroll;
+    }
+
+    .contents h2 {
+        text-align: center;
+        top: 0;
+
+        
+    }
+
+    .selection_container {
+        height: min-content;
+    }
+    .selection_container span{
+        display: block;
+        width: max-content;
+        padding: 0px !important;
+        margin: 20px !important;
+    }
+    .selection{
+        display: inline;
+        padding: 5px;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    :root {
+        --primary-light: #8abdff;
+        --primary: #6d5dfc;
+        --primary-dark: #5b0eeb;
+        --white: #FFFFFF;
+        --greyLight-1: #E4EBF5;
+        --greyLight-2: #c8d0e7;
+        --greyLight-3: #bec8e4;
+        --greyDark: #9baacf;
+        --light: #ffffff;
+        --dark: #0000001f;
+    }
+
+    .top {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color: #408bee;
+        padding: 20px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .quiz {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: min-content;
+        margin: 0 auto !important;
+        font-size: 1.1em;
+    }
+
+    .quiz div {
+        width: max-content;
+    }
+
+    button {
+        font-size: 1.05em !important;
+    }
+
+    .neuromorph {
+        margin: 10px;
+        box-sizing: border-box;
+        border: 4px solid #F2F2F2;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--dark), -0.2rem -0.2rem 0.5rem var(--light);
+        border-radius: 20px;
+    }
+
+    .neuromorphInset {
+        background-color: #ececec;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: inset 0.3rem 0.3rem 0.35rem var(--dark), inset -0.2rem -0.2rem 0.6rem #f0f0f0;
+    }
+
+    body {
+        padding: 0;
+        margin: 0 auto;
+        background-color: #F2F2F2;
+        font-family: 'Sora', sans-serif;
+
+    }
+
+    button:hover {
+        box-shadow: 0.3rem 0.3rem 0.3rem #00000041, -0.2rem -0.2rem 0.5rem #ffffff;
+    }
+
+    button:active {
+        border: 4px solid #ffffff00;
+        box-shadow: inset 0.3rem 0.3rem 0.35rem #00000041, inset -0.2rem -0.2rem 0.6rem #f0f0f0;
+    }
+
+    
+</style>
+
+</html>
